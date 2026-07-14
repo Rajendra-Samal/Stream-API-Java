@@ -2,6 +2,7 @@ package stream_api;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FindSecondAndThirdElement {
     public static void main(String[] args) {
@@ -10,7 +11,7 @@ public class FindSecondAndThirdElement {
         List<Integer> result = list.stream()
                 .skip(1)
                 .limit(2)
-                .toList();
+                .collect(Collectors.toList()); // instead of this we can use .toList() java 16 and more
         System.out.println(result);
     }
 }
